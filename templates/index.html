@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Heat Exchanger Anomary Detection</title>
+    <link rel="stylesheet" href="./static/stylesheet.css">
+</head>
+<body>
+    <header>   
+        <a class="header-logo" href="#">熱交換器の異常検出アプリ</a>
+    </header>
+
+    <div class="main">
+        <div class="left-wrapper">  
+            <h2> AIが熱交換器の異常を早期に検知します。</h2>
+            <p class="left">アプリに関する詳細は以下のリンクをご覧ください。</p>
+            <a class="gd left" href="https://docs.google.com/document/d/1ZUG7DYr-6pbSvt5pZ_eYjvrFiHSaH1-qpQVxezAbU3M/edit?usp=sharing">熱交換器の異常検出アプリの制作</a>
+            <p class="left">下のボタンを押してください。</p>
+            <form method="POST" enctype="multipart/form-data">
+                <input class="btn" type="submit" value="スタート！">
+            </form>
+            <div class="answer left">{{answer}}</div>
+            <p class="left">※601日目から異常兆候開始、</p>
+            <p class="left">　異常値−予測値（正常期間から予測）が</p>
+            <p class="left">　20を超えた日に異常として検知</p>
+        </div> 
+
+        <div class="right-wrapper">
+            <div class="img-wrapper">
+                <div class="set">
+                    <div class="img">
+                        <p>温排水の入口温度</p>
+                        <img src={{figure1}} class="image">
+                    </div>
+                    <div class="img">
+                        <p>温排水の流量</p>
+                        <img src={{figure2}} class="image">
+                    </div>
+                </div>
+                <div class="set">
+                    <div class="img">
+                        <p>熱媒体の流量</p>
+                        <img src={{figure3}} class="image">
+                    </div>
+                    <div class="img">
+                        <p>U値(青：異常あり、オレンジ：予測)</p>
+                        <img src={{figure4}} class="image">
+                    </div>
+                </div>
+                <div class="set">
+                    <div class="img">
+                        <p>異常ありのU値と予測値の差</p>
+                        <img src={{figure5}} class="image">
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div>
+</body>
+</html>
